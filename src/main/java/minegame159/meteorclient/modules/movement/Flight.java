@@ -98,10 +98,10 @@ public class Flight extends ToggleModule {
             Vec3d initialVelocity = mc.player.getVelocity();
 
             if (mc.options.keyJump.isPressed()) {
-                mc.player.setVelocity(initialVelocity.add(0, speed.get() * 5f, 0));
+                mc.player.setVelocity(initialVelocity.add(0, speed.get() * (mc.player.isSprinting() ? 10f : 5f), 0));
             }
             if (mc.options.keySneak.isPressed()) {
-                mc.player.setVelocity(initialVelocity.subtract(0, speed.get() * 5f, 0));
+                mc.player.setVelocity(initialVelocity.subtract(0, speed.get() * (mc.player.isSprinting() ? 10f : 5f), 0));
             }
         }
     });
